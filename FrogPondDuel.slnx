@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="FrogPondDuel.Core/FrogPondDuel.Core.csproj" />
+  <Project Path="FrogPondDuel.Tests/FrogPondDuel.Tests.csproj" />
+  <Project Path="FrogPondDuel.Web/FrogPondDuel.Web.csproj" />
+</Solution>

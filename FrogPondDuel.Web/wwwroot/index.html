@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frog Pond Duel</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <div>
+          <p class="label">Frog Chess backend</p>
+          <h1>Frog Pond Duel</h1>
+        </div>
+        <div class="connection" id="connection">offline</div>
+      </header>
+
+      <section class="workbench">
+        <aside class="panel setup">
+          <form id="joinForm" class="stack">
+            <label>
+              Имя игрока
+              <input id="nameInput" maxlength="28" required placeholder="Игрок">
+            </label>
+            <label>
+              ID матча
+              <input id="matchInput" placeholder="оставьте пустым для создания">
+            </label>
+            <button id="joinButton" type="submit">Создать или войти</button>
+          </form>
+
+          <div class="ticket">
+            <span>Матч</span>
+            <strong id="matchIdText">-</strong>
+            <button id="copyButton" type="button">Копировать ID</button>
+          </div>
+
+          <div class="actions">
+            <button id="sendJumpButton" type="button" disabled>Отправить прыжок</button>
+            <button id="resetPathButton" type="button" disabled>Сбросить цепочку</button>
+            <button id="passButton" type="button">Пропустить ход</button>
+          </div>
+        </aside>
+
+        <section class="board-panel">
+          <div class="scorebar" id="scorebar">Ожидание матча</div>
+          <div class="board" id="board"></div>
+        </section>
+
+        <aside class="panel events">
+          <h2>События</h2>
+          <ol id="events"></ol>
+        </aside>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
